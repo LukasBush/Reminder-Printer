@@ -1,15 +1,14 @@
-import messages
-import time
+import config
 import startup
 
 def main():
-    successful_start_up = startup.start_app()
 
-    if not successful_start_up:
+    if not startup.start_app():
         print("Error in start up")
         return
 
     print("The program will now begin")
+    print(config.GLOBAL_OFFSET)
 
 
 if __name__ == "__main__":

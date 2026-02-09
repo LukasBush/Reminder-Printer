@@ -1,12 +1,14 @@
-import app_config.app_config as app_config
-
-from pathlib import Path
-
-# def start_up_app() -> bool:
+import state.offset_store as offset_store
 
 def start_app() -> bool:
-    valid_update_id = app_config.setLastUpdateId()
+    valid_update_id = offset_store.getLastUpdateId()
     
-    if not valid_update_id: return False
+    print(valid_update_id)
+
+    if valid_update_id < 0: 
+        return False
+
+    if not offset_store.setLastUpdateId(valid_update_id + 1):
+        return False
 
     return True
