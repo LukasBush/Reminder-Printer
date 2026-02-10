@@ -1,3 +1,4 @@
 BOT_TOKEN = "8319148720:AAEB291OrCn6cWEs_E9ITBupf9avIwUPcEk"
 BASE_URL = f"https://api.telegram.org/bot{BOT_TOKEN}"
 GLOBAL_OFFSET = -1
+SHUT_DOWN = False

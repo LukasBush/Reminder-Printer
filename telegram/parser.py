@@ -1,7 +1,6 @@
 from .models import TelegramUpdate, TelegramFrom, TelegramMessage
 
 def parse_update(data: dict) -> TelegramUpdate:
-    final_message = None
     received_message = data.get("message")
     if received_message:
         from_user = received_message.get("from")
@@ -15,6 +14,6 @@ def parse_update(data: dict) -> TelegramUpdate:
         )
 
     return TelegramUpdate(
-        update_id = data.get("update_id"),
+        update_id = data["update_id"],
         message = final_message
     )

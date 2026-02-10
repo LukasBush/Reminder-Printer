@@ -3,16 +3,16 @@ from dataclasses import dataclass
 
 @dataclass
 class TelegramUpdate:
-    update_id: int | None
-    message: TelegramMessage | None
+    update_id: int
+    message: TelegramMessage
 
 @dataclass
 class TelegramMessage:
-    message_from: TelegramFrom | None
+    message_from: TelegramFrom
     date: int | None
-    text: str | None
+    text: str
 
 @dataclass
 class TelegramFrom:
-    first_name: str | None
-    last_name: str | None
+    first_name: str
+    last_name: str

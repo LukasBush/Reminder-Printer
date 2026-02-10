@@ -19,9 +19,9 @@ def setLastUpdateId(update_id: int) -> bool:
     try:
         file_path = Path(LAST_UPDATE_FILE)
         temp_file = file_path.with_suffix(".tmp")
-        temp_file.write_text(str(update_id), encoding = "utf-8")
+        temp_file.write_text(str(update_id + 1), encoding = "utf-8")
         temp_file.replace(file_path)
-        config.GLOBAL_OFFSET = update_id
+        config.GLOBAL_OFFSET = update_id + 1
         return True
     except:
         return False
